@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 
-def animation(agents, function, lb, ub, sr=False):
+def animation(agents, function, lb, ub, sr=False, filename='result', extension='.gif'):
 
     side = np.linspace(lb, ub, (ub - lb) * 5)
     X, Y = np.meshgrid(side, side)
@@ -35,9 +35,9 @@ def animation(agents, function, lb, ub, sr=False):
 
     if sr:
 
-        ani.save('result.mp4')
+        ani.save(filename + extension)
 
-    plt.show()
+    #plt.show()
 
 
 def animation3D(agents, function, lb, ub, sr=False):
@@ -85,6 +85,7 @@ def animation3D(agents, function, lb, ub, sr=False):
 
     if sr:
 
-        ani.save('result.mp4')
+        ani.save('result_3D.gif')
 
+    plt.draw()
     plt.show()
